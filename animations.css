@@ -1,0 +1,159 @@
+/* ============================================================
+   FARAZ MASTER — ANIMATIONS
+============================================================ */
+
+/* ===== PAGE / SCREEN TRANSITIONS ===== */
+.screen { animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ===== MESSAGE ANIMATIONS ===== */
+.animate-in { animation: msgIn 0.3s ease; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* ===== PANEL SWITCH ===== */
+.panel { animation: panelFade 0.25s ease; }
+@keyframes panelFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ===== AVATAR CORE PULSE ===== */
+#avatar-core { animation: avatarPulse 3s ease-in-out infinite; }
+@keyframes avatarPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(79,127,255,0.4), 0 0 40px rgba(79,127,255,0.2); transform: scale(1); }
+  50% { box-shadow: 0 0 30px rgba(79,127,255,0.6), 0 0 60px rgba(79,127,255,0.3); transform: scale(1.05); }
+}
+
+/* ===== SPEAKING AVATAR ===== */
+#avatar-core.speaking { animation: avatarSpeak 0.4s ease-in-out infinite alternate; }
+@keyframes avatarSpeak {
+  from { transform: scale(1); box-shadow: 0 0 20px rgba(79,127,255,0.4); }
+  to   { transform: scale(1.15); box-shadow: 0 0 40px rgba(79,127,255,0.8), 0 0 80px rgba(155,89,255,0.4); }
+}
+
+/* ===== LISTENING PULSE ===== */
+.listening-pulse { animation: listenPulse 1s ease-in-out infinite; }
+@keyframes listenPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,232,138,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(0,232,138,0); }
+}
+
+/* ===== VOICE BUTTON ACTIVE ===== */
+#voice-toggle-btn.voice-active { background: rgba(79,127,255,0.15); border-color: var(--accent); animation: voiceGlow 1.5s ease-in-out infinite; }
+@keyframes voiceGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79,127,255,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(79,127,255,0); }
+}
+
+/* ===== CARD HOVER LIFT ===== */
+.task-card, .news-card, .memory-item, .file-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===== SHAKE (wrong PIN) ===== */
+.shake { animation: shakeX 0.5s ease; }
+@keyframes shakeX { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-12px)} 40%{transform:translateX(12px)} 60%{transform:translateX(-8px)} 80%{transform:translateX(8px)} }
+
+/* ===== EMOTION INDICATOR BOUNCE ===== */
+.emotion-bounce { animation: emotionBounce 0.5s ease; }
+@keyframes emotionBounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.4)} }
+
+/* ===== NOTIFICATION BADGE PULSE ===== */
+.notif-badge:not(:empty) { animation: badgePulse 0.5s ease; }
+@keyframes badgePulse { 0%{transform:scale(1)} 50%{transform:scale(1.3)} 100%{transform:scale(1)} }
+
+/* ===== SIDEBAR COLLAPSE ===== */
+.sidebar { transition: width 0.3s ease; }
+.nav-item span { transition: opacity 0.2s ease; }
+.sidebar.collapsed .nav-item span { opacity: 0; pointer-events: none; }
+
+/* ===== ORBS SPIN ===== */
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes spin-med  { to { transform: rotate(360deg); } }
+
+/* ===== SETUP STEP TRANSITION ===== */
+.setup-step-content { animation: stepIn 0.3s ease; }
+@keyframes stepIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+
+/* ===== PROGRESS / LOADING ===== */
+.loading-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+  background-size: 200% auto;
+  animation: loadingBar 1.5s linear infinite;
+  border-radius: 3px;
+}
+@keyframes loadingBar { to { background-position: 200% center; } }
+
+/* ===== TYPING ANIMATION (agent typing) ===== */
+.typing-cursor::after {
+  content: '|';
+  animation: blink-cursor 0.8s step-end infinite;
+  color: var(--accent);
+}
+@keyframes blink-cursor { 50% { opacity: 0; } }
+
+/* ===== TOAST SLIDE ===== */
+.toast { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease; }
+
+/* ===== MODAL BACKDROP ===== */
+.modal { animation: backdropIn 0.2s ease; }
+.modal-box { animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes backdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalIn { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+/* ===== NEWS CARD STAGGER ===== */
+.news-card:nth-child(1) { animation-delay: 0.05s; }
+.news-card:nth-child(2) { animation-delay: 0.10s; }
+.news-card:nth-child(3) { animation-delay: 0.15s; }
+.news-card:nth-child(4) { animation-delay: 0.20s; }
+.news-card:nth-child(5) { animation-delay: 0.25s; }
+.news-card:nth-child(6) { animation-delay: 0.30s; }
+
+/* ===== CONFETTI (task complete / celebration) ===== */
+@keyframes confettiFall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+.confetti-piece {
+  position: fixed;
+  width: 10px; height: 10px;
+  animation: confettiFall 2s ease-in forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ===== CAMERA FLASH ===== */
+@keyframes cameraFlash { 0%,100%{opacity:0} 50%{opacity:0.5} }
+.camera-flash { animation: cameraFlash 0.3s ease; }
+
+/* ===== VOICE WAVEFORM (input) ===== */
+.waveform-bars { display: flex; gap: 2px; align-items: center; }
+.waveform-bars span {
+  display: block; width: 3px;
+  background: var(--accent);
+  border-radius: 3px;
+  animation: waveBar 1s ease infinite;
+}
+.waveform-bars span:nth-child(odd) { animation-delay: 0.2s; }
+.waveform-bars span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes waveBar {
+  0%, 100% { height: 4px; }
+  50% { height: 20px; }
+}
+
+/* ===== HEATMAP CELLS ===== */
+.heatmap-cell { transition: background 0.5s ease; }
+.heatmap-cell:hover { transform: scale(1.5); z-index: 1; position: relative; }
+
+/* ===== PIN WORD FILLED STATE ===== */
+.pin-word:not(:placeholder-shown) { border-color: var(--accent); animation: pinFilled 0.2s ease; }
+@keyframes pinFilled { 0%{transform:scale(0.95)} 60%{transform:scale(1.05)} 100%{transform:scale(1)} }
+
+/* ===== STATUS DOT BLINK ===== */
+.status-dot { animation: blinkGreen 2s ease-in-out infinite; }
+@keyframes blinkGreen { 0%,100%{opacity:1; box-shadow: 0 0 6px var(--success);} 50%{opacity:0.5; box-shadow: 0 0 2px var(--success);} }
+
+/* ===== AGENT EMOTION STATE COLORS ===== */
+.sidebar-orb.state-happy   { background: linear-gradient(135deg, #00E88A, #00D4FF); }
+.sidebar-orb.state-upset   { background: linear-gradient(135deg, #FF4466, #FF8050); }
+.sidebar-orb.state-playful { background: linear-gradient(135deg, #FFB800, #FF6B6B); }
+.sidebar-orb.state-serious { background: linear-gradient(135deg, #444466, #222244); }
+.sidebar-orb.state-concerned { background: linear-gradient(135deg, #9B59FF, #4F7FFF); }

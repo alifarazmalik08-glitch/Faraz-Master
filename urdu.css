@@ -1,0 +1,212 @@
+/* ============================================================
+   FARAZ MASTER — URDU / RTL / NASTALIQ STYLES
+============================================================ */
+
+/* Urdu Nastaliq Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+/* RTL Root when Urdu or Punjabi active */
+body.lang-ur, body.lang-pn {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Urdu Nastaliq font application */
+body.lang-ur .msg-content,
+body.lang-ur .news-headline,
+body.lang-ur .news-summary,
+body.lang-ur .task-title,
+body.lang-ur .memory-content,
+body.lang-ur .topbar-greeting,
+body.lang-ur .welcome-msg h2,
+body.lang-ur .welcome-msg p,
+body.lang-ur #thinking-text,
+body.lang-ur .chip,
+body.lang-ur .notif-item,
+body.lang-ur .agent-bubble .msg-content {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaliq', serif;
+  font-size: 1.05em;
+  line-height: 2;
+}
+
+/* RTL layout fixes */
+body.lang-ur .sidebar,
+body.lang-pn .sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
+body.lang-ur .main-content,
+body.lang-pn .main-content {
+  margin-left: 0;
+  margin-right: var(--sidebar-width);
+}
+
+body.lang-ur .sidebar.collapsed ~ .main-content,
+body.lang-pn .sidebar.collapsed ~ .main-content {
+  margin-right: 60px;
+}
+
+/* Nav items RTL */
+body.lang-ur .nav-item,
+body.lang-pn .nav-item {
+  border-left: none;
+  border-right: 3px solid transparent;
+  flex-direction: row-reverse;
+}
+body.lang-ur .nav-item.active,
+body.lang-pn .nav-item.active {
+  border-right-color: var(--accent);
+  border-left-color: transparent;
+}
+body.lang-ur .nav-badge,
+body.lang-pn .nav-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Messages RTL */
+body.lang-ur .msg-user,
+body.lang-pn .msg-user {
+  flex-direction: row;
+}
+body.lang-ur .msg-agent,
+body.lang-pn .msg-agent {
+  flex-direction: row-reverse;
+}
+body.lang-ur .agent-bubble,
+body.lang-pn .agent-bubble {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 4px;
+}
+body.lang-ur .user-bubble,
+body.lang-pn .user-bubble {
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 4px;
+}
+
+/* Input area RTL */
+body.lang-ur .chat-textarea,
+body.lang-pn .chat-textarea {
+  direction: rtl;
+  text-align: right;
+}
+
+/* PIN grid stays LTR */
+body.lang-ur .pin-grid,
+body.lang-pn .pin-grid {
+  direction: ltr;
+}
+
+/* Sidebar logout RTL */
+body.lang-ur .sidebar-logout,
+body.lang-pn .sidebar-logout {
+  flex-direction: row-reverse;
+}
+
+/* Settings RTL */
+body.lang-ur .setting-row,
+body.lang-pn .setting-row {
+  flex-direction: row-reverse;
+}
+
+/* Topbar RTL */
+body.lang-ur .topbar,
+body.lang-pn .topbar {
+  flex-direction: row-reverse;
+}
+body.lang-ur .topbar-left,
+body.lang-pn .topbar-left {
+  flex-direction: row-reverse;
+}
+body.lang-ur .topbar-right,
+body.lang-pn .topbar-right {
+  flex-direction: row-reverse;
+}
+
+/* Quick chips RTL */
+body.lang-ur .quick-chips,
+body.lang-pn .quick-chips {
+  direction: rtl;
+}
+
+/* Task cards RTL */
+body.lang-ur .task-meta,
+body.lang-pn .task-meta {
+  flex-direction: row-reverse;
+}
+body.lang-ur .task-time,
+body.lang-pn .task-time {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* News RTL */
+body.lang-ur .news-meta,
+body.lang-pn .news-meta {
+  flex-direction: row-reverse;
+}
+body.lang-ur .news-time,
+body.lang-pn .news-time {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Analytics RTL */
+body.lang-ur .panel-header,
+body.lang-pn .panel-header {
+  flex-direction: row-reverse;
+}
+
+/* Urdu numerals (optional — controlled by setting) */
+body.urdu-nums {
+  font-feature-settings: "tnum";
+}
+
+/* Punjabi specific */
+body.lang-pn .msg-content {
+  font-family: 'Noto Sans Gurmukhi', system-ui, sans-serif;
+  line-height: 1.8;
+}
+
+/* Modal RTL */
+body.lang-ur .modal-box,
+body.lang-pn .modal-box {
+  direction: rtl;
+  text-align: right;
+}
+body.lang-ur .btn-row,
+body.lang-pn .btn-row {
+  flex-direction: row-reverse;
+}
+body.lang-ur .recovery-methods,
+body.lang-pn .recovery-methods {
+  text-align: right;
+}
+
+/* Setup screen RTL adjustments */
+body.lang-ur .setup-step-content,
+body.lang-pn .setup-step-content {
+  direction: rtl;
+  text-align: right;
+}
+body.lang-ur .input-group,
+body.lang-pn .input-group {
+  text-align: right;
+}
+
+/* Notification panel RTL */
+body.lang-ur .notif-panel,
+body.lang-pn .notif-panel {
+  right: auto;
+  left: 0;
+}
+body.lang-ur .notif-header,
+body.lang-pn .notif-header {
+  flex-direction: row-reverse;
+}
+
+/* Voice waveform stays LTR */
+.voice-waves { direction: ltr; }
